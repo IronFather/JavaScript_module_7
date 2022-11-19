@@ -165,7 +165,3 @@ input {
   align-items: center;
   display: flex;
 }
-
-.active {
-  background-color: aqua;
-}
