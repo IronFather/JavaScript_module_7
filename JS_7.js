@@ -602,7 +602,127 @@
 
 // LAZY LOADING ----------------------------------------
 
-//  -------------------------------------------------------------
+// 7.2 РЕПЕТА -lesson-14-chatty-events-and-lazyload---&&&&&&&&&
+// 7.2 РЕПЕТА 01-chatty-events.html----------------------------
+/*
+ * Сhatty events
+ * Приемы throttling и debouncing c Lodash
+ */
+
+/*
+ * Mousemove и throttle
+ */
+const coordsOutputRef = document.querySelector('.js-coords');
+let mouseMoveCbInvocationCounter = 0;
+
+window.addEventListener('mousemove', _.throttle(onMouseMove, 250));
+
+function onMouseMove(event) {
+  mouseMoveCbInvocationCounter += 1;
+
+  coordsOutputRef.textContent = `
+    Кол-во вызовов onMouseMove: ${mouseMoveCbInvocationCounter},
+    X: ${event.clientX},
+    Y:${event.clientY}
+  `;
+}
+
+/*
+ * Input и debounce
+ */
+const inputRef = document.querySelector('.js-input');
+const outputRef = document.querySelector('.js-output');
+let inputCbInvocationCounter = 0;
+
+inputRef.addEventListener('input', _.debounce(onInputChange, 300));
+
+function onInputChange(event) {
+  inputCbInvocationCounter += 1;
+
+  outputRef.textContent = `
+    Кол-во вызовов onInputChange: ${inputCbInvocationCounter},
+    Значение: ${event.target.value}
+  `;
+}
+
+// 7.2 РЕПЕТА 02-search.html--------------------------------
+
+// const allStudents = [
+//     "Jayne Kuyper",
+//     "Tiesha Laine",
+//     "Lupe Olague",
+//     "Clarita Bellman",
+//     "Laura Munden",
+//     "Bertram Calvi",
+//     "Georgianna Sparr",
+//     "Carolann Seller",
+//     "Felicia Midgette",
+//     "Kasandra Bezio",
+//     "Elias Vanwyk",
+//     "Yu Mccool",
+//     "Kati Golub",
+//     "Pat Dalley",
+//     "Loreta Francis",
+//     "Beatris Larusso",
+//     "Corrin Vancleve",
+//     "Sofia Ressler",
+//     "Erlene Burke",
+//     "Breann Sande",
+//     "Samatha Sao",
+//     "Henry Say",
+//     "Monnie Bernhard",
+//     "Dia Culbert",
+//     "Sunny Disandro",
+//     "Mack Sen",
+//     "Jeremiah Astle",
+//     "Misha Ono",
+//     "Silas Aubry",
+//     "Kenya Longmore",
+//     "Mirta Brandenberger",
+//     "Eneida Overholt",
+//     "Marcelo Popejoy",
+//     "Serafina Irvin",
+//     "Leroy Tacey",
+//     "Brice Hedrick",
+//     "Elana Hoops",
+//     "Keena London",
+//     "Enriqueta Hein",
+//     "Valeria Turnbull",
+//     "Earlean Canchola",
+//     "Corinna Tousignant",
+//     "Sherry Rivera",
+//     "Chasity Janda",
+//     "Tamela Barlow",
+//     "Leandro Lonergan",
+//     "Karlene Breunig",
+//     "Winter Endicott",
+//     "Salena Nail",
+//     "Tanner Clapper",
+//   ];
+  
+//   const searchBox = document.querySelector(".search-box");
+//   const studentList = document.querySelector(".student-list");
+  
+//   populateStudentList(allStudents);
+  
+//   searchBox.addEventListener("input", _.throttle(onSearch, 300));
+//   // searchBox.addEventListener('input', _.debounce(onSearch, 150));
+  
+//   function onSearch() {
+//     console.log("onSearch");
+//     const filter = searchBox.value.toLowerCase();
+//     const visibleStudents = allStudents.filter((student) =>
+//       student.toLowerCase().includes(filter)
+//     );
+//     populateStudentList(visibleStudents);
+//   }
+  
+//   function populateStudentList(students) {
+//     const markup = students.map((student) => `<li>${student}</li>`).join("");
+//     studentList.innerHTML = markup;
+//   }
+
+// 7.2 РЕПЕТА -03-lazy-images.html------------------------------
 
 
-//  -------------------------------------------------------------
+// 7.2 РЕПЕТА --------------------------------------------
