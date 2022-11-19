@@ -316,7 +316,7 @@
 
 // 7.1 АРТЕМ БАРДАЧЕВ -&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
-/** Task 1. Calculator */
+// ЗАДАЧА 1 - АРТЕМ БАРДАЧЕВ-КАЛЬКУЛЯТОР -------------------- 
 
 // const formEl = document.querySelector(`.form`);
 // const quantityEl = document.querySelector(`.amount`);
@@ -377,7 +377,9 @@
 //   formHandler(e.currentTarget)
 // });
 
+// ЗАДАЧА 2 - АРТЕМ БАРДАЧЕВ - ГАЛЕРЕЯ ------------------------- 
 // /** Task 2. Image gallery */
+
 // const images =  [
 //   {
 //     "title": "Коник стрибунець",
@@ -404,6 +406,51 @@
 //     "src": "https://cdn.pixabay.com/photo/2022/10/24/09/54/switzerland-7543063_1280.jpg"
 //   },
 // ]
+
+// const imagesGalleryEl = document.querySelector(`.images-gallery`);
+// console.log(imagesGalleryEl);
+
+// 1. створення картинок в ДОМ-дереві
+// images.forEach(({title, src}) => {
+//     const newImgEl = document.createElement(`img`);
+//     newImgEl.src = src;
+//     newImgEl.alt = title;
+
+//     imagesGalleryEl.append(newImgEl);
+// });
+
+// 2. робота з модалками в т.ч. добавить visible
+
+// const imageModalOverlayEl = document.querySelector(`.image-modal-overlay`);
+// const ModalContantEl = document.querySelector(`.image-modal`);
+
+
+// imagesGalleryEl.addEventListener(`click`, e => {
+//     // console.log(e);
+//     // console.log(e.target.nodeName);
+
+//     if(e.target.nodeName === "IMG") {
+//         imageModalOverlayEl.classList.add(`visible`);
+//         ModalContantEl.innerHTML = e.target.getAttribute(`alt`);
+//     }
+// });
+
+// 3. убрать visible с модалки
+
+// imageModalOverlayEl.addEventListener(`click`, e => {
+//     imageModalOverlayEl.classList.remove(`visible`);
+//     });
+
+    // imageModalOverlayEl.addEventListener(`click`, e => {
+    //     // console.log(e.target.nodeName); //DIV
+    //     if(e.target.nodeName === "DIV") {
+    //         imageModalOverlayEl.classList.remove(`visible`);
+    //     }
+    // });
+
+
+// -------------------------------------------------------------------
+
 
 // const imgModal = document.querySelector('.image-modal-overlay');
 // const modalContent = document.querySelector('.image-modal');
@@ -434,4 +481,51 @@
 // })
 
 
-// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+// 7.2 КОНСПЕКТ Throttle и Debounce - &&&&&&&&&&&&&&&&&&&&&&&&&
+
+// const output = document.querySelector(".output");
+// let scrollEventCounter = 0;
+
+// document.addEventListener("scroll", () => {
+//   scrollEventCounter += 1;
+//   output.textContent = scrollEventCounter;
+// });
+
+// -------------------------------------------------------------
+
+// document.addEventListener(
+//     "scroll",
+//     _.throttle(() => {
+//       console.log("Scroll handler call every 300ms");
+//     }, 300)
+//   );
+//  -------------------------------------------------------------
+
+const vanillaOutput = document.querySelector(".output.vanilla");
+const throttledOutput = document.querySelector(".output.throttled");
+const eventCounter = {
+  vanilla: 0,
+  throttled: 0
+};
+
+document.addEventListener("scroll", () => {
+  eventCounter.vanilla += 1;
+  vanillaOutput.textContent = eventCounter.vanilla;
+});
+
+document.addEventListener(
+  "scroll",
+  _.throttle(() => {
+    eventCounter.throttled += 1;
+    throttledOutput.textContent = eventCounter.throttled;
+  }, 00)
+);
+
+
+
+
+//  -------------------------------------------------------------
+//  -------------------------------------------------------------
+//  -------------------------------------------------------------
+//  -------------------------------------------------------------
+//  -------------------------------------------------------------
