@@ -612,38 +612,78 @@
 /*
  * Mousemove и throttle
  */
-const coordsOutputRef = document.querySelector('.js-coords');
-let mouseMoveCbInvocationCounter = 0;
 
-window.addEventListener('mousemove', _.throttle(onMouseMove, 250));
+// const mouseMoveControlEl = document.querySelector(`.js-coords`);
+// console.log(mouseMoveControlEl);
 
-function onMouseMove(event) {
-  mouseMoveCbInvocationCounter += 1;
+// window.addEventListener(`mousemove`, _.throttle(onMouseMove, 350));
+// let moseMoveAmountEvent = 0; 
 
-  coordsOutputRef.textContent = `
-    Кол-во вызовов onMouseMove: ${mouseMoveCbInvocationCounter},
-    X: ${event.clientX},
-    Y:${event.clientY}
-  `;
-}
+// function onMouseMove(event) {
+//     moseMoveAmountEvent += 1;
+
+//     mouseMoveControlEl.textContent = `
+//     Amount mousemoves: ${moseMoveAmountEvent},
+//     X: ${event.clientX},
+//     Y: ${event.clientY}
+//     `;
+// }
+
+// ---------------------------------------------------------------
+// const coordsOutputRef = document.querySelector('.js-coords');
+// let mouseMoveCbInvocationCounter = 0;
+
+// window.addEventListener('mousemove', onMouseMove);
+
+// function onMouseMove(event) {
+//     mouseMoveCbInvocationCounter += 1;
+
+//     coordsOutputRef.textContent = `
+//         Кол-во вызовов onMouseMove: ${mouseMoveCbInvocationCounter},
+//         X: ${event.clientX},
+//         Y:${event.clientY}
+//     `;
+// }
+
+// ---------------------------------------------------------------
 
 /*
  * Input и debounce
  */
-const inputRef = document.querySelector('.js-input');
-const outputRef = document.querySelector('.js-output');
-let inputCbInvocationCounter = 0;
 
-inputRef.addEventListener('input', _.debounce(onInputChange, 300));
+// const inputEl = document.querySelector(`.js-input`);
+// // console.log(inputEl);
+// const outputEl = document.querySelector(`.js-output`);
+// // console.log(outputEl);
+// let MouseChangeInput = 0;
 
-function onInputChange(event) {
-  inputCbInvocationCounter += 1;
+// inputEl.addEventListener(`input`, _.debounce(onInputChange, 300));
 
-  outputRef.textContent = `
-    Кол-во вызовов onInputChange: ${inputCbInvocationCounter},
-    Значение: ${event.target.value}
-  `;
-}
+// function onInputChange(e) {
+//     MouseChangeInput += 1;
+    
+//     outputEl.textContent = `
+//     Кол-во вызовов onInputChange: ${MouseChangeInput};
+//     Значение: ${e.target.value};
+//     `;
+// }
+
+// ---------------------------------------------------------------
+
+// const inputRef = document.querySelector('.js-input');
+// const outputRef = document.querySelector('.js-output');
+// let inputCbInvocationCounter = 0;
+
+// inputRef.addEventListener('input', _.debounce(onInputChange, 300));
+
+// function onInputChange(event) {
+//   inputCbInvocationCounter += 1;
+
+//   outputRef.textContent = `
+//     Кол-во вызовов onInputChange: ${inputCbInvocationCounter},
+//     Значение: ${event.target.value}
+//   `;
+// }
 
 // 7.2 РЕПЕТА 02-search.html--------------------------------
 
@@ -700,6 +740,40 @@ function onInputChange(event) {
 //     "Tanner Clapper",
 //   ];
   
+
+// const inputEl = document.querySelector(`.search-box`);
+// // console.log(inputEl);
+// const studentListEl = document.querySelector(`.student-list`);
+// // console.log(studentListEl);
+
+// function makeStudentList(students) {
+//     return students.map(student => `<li>${student}</li>`).join("");
+// };
+
+// const markup = makeStudentList(allStudents);
+// // console.log(markup);
+// // studentListEl.innerHTML = markup;
+// finishFilterList(allStudents);
+
+// inputEl.addEventListener(`input`, onInputFilter);
+
+// function onInputFilter(e) {
+//     console.log(e.target.value);
+//     const filter = e.target.value.toLowerCase();
+
+//     const filterItems = allStudents.filter(student => 
+//         student.toLowerCase().includes(filter)); 
+//     console.log(filterItems);
+
+//     const markup = makeStudentList(filterItems);
+//     // studentListEl.innerHTML = markup;
+// }   finishFilterList(filterItems);
+
+// function finishFilterList(markup) {
+//     studentListEl.innerHTML = markup;
+// }
+// -----------------------------------------------------------
+
 //   const searchBox = document.querySelector(".search-box");
 //   const studentList = document.querySelector(".student-list");
   
