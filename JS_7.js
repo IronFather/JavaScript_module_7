@@ -801,14 +801,55 @@
 
 //  7.2 АРТЕМ БАРДАЧЕВ -&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
-const scrollAmountEl = document.querySelector(`.scroll-amount`);
-let scrollAmountCounter = 0;
+// const scrollAmountEl = document.querySelector(`.scroll-amount`);
+// let scrollAmountCounter = 0;
 
 
-function onWindowScrollAmount (e) {
-    scrollAmountCounter += 1;
-    scrollAmountEl.textContent = scrollAmountCounter;
-};
+// function onWindowScrollAmount (e) {
+//     scrollAmountCounter += 1;
+//     scrollAmountEl.textContent = scrollAmountCounter;
+// };
 
-window.addEventListener(`scroll`, _.throttle(onWindowScrollAmount, 1000));
+// window.addEventListener(`scroll`, _.throttle(onWindowScrollAmount, 1000));
 
+// допрацювання задачі 7.1-------------------------------------------
+
+// const formEl = document.querySelector(`.form`);
+// const quantityEl = document.querySelector(`.amount`);
+// const totalPriceEl = document.createElement(`span`);
+
+// formEl.append(totalPriceEl);
+// totalPriceEl.before(`Загальна вартість: `);
+// totalPriceEl.after(` грн.`);
+
+// function onFormInput(formEl) {
+
+//   const {elements: {price,quantity}} = formEl;
+
+//   // console.log(price.value, quantity.value);
+
+//   const totalPrice = Number(price.value * quantity.value).toFixed(2);
+
+//   totalPriceEl.innerHTML = totalPrice;
+//   quantityEl.innerHTML = quantity.value;
+// };
+
+// formEl.addEventListener(`input`, e => {
+//   onFormInput(e.currentTarget)
+// });
+
+// document.addEventListener(`DOMContentLoaded`, e => {
+//   onFormInput(formEl)
+// });
+
+// const inputEl = document.querySelector(`#price`);
+// const outputEl = document.querySelector(`.server-amount`);
+// let inputCounter = 0;
+
+// inputEl.addEventListener('input', _.debounce(onInputChange, 500));
+
+// function onInputChange(event) {
+//   inputCounter += 1;
+
+//   outputEl.textContent = `${event.target.value}`;
+}
