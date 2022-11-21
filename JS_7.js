@@ -799,4 +799,16 @@
 // 7.2 РЕПЕТА -03-lazy-images.html------------------------------
 
 
-// 7.2 РЕПЕТА --------------------------------------------
+//  7.2 АРТЕМ БАРДАЧЕВ -&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+const scrollAmountEl = document.querySelector(`.scroll-amount`);
+let scrollAmountCounter = 0;
+
+
+function onWindowScrollAmount (e) {
+    scrollAmountCounter += 1;
+    scrollAmountEl.textContent = scrollAmountCounter;
+};
+
+window.addEventListener(`scroll`, _.throttle(onWindowScrollAmount, 1000));
+
