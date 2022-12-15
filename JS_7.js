@@ -852,4 +852,4 @@
 //   inputCounter += 1;
 
 //   outputEl.textContent = `${event.target.value}`;
-}
+// }
